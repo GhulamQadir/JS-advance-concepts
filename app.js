@@ -1,4 +1,4 @@
-var div = document.getElementById('testing')
+var div = document.getElementById('values')
 
 var localArray = [];
 function saveItem() {
@@ -11,7 +11,6 @@ function saveItem() {
         localArray.push({ "name": getInputVal.value })
 
         setItem()
-
 
         var newDiv = document.createElement("div")
         var item = document.createElement('h2')
@@ -84,4 +83,3 @@ function getItem() {
     }
 }
 getItem()
-// saveItem()
