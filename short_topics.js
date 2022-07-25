@@ -30,3 +30,35 @@ if (true) {
     // b = "const"
     // console.log(b) // its value cant be updated
 }
+
+
+
+
+// spread operators
+// es5 method
+// var sectionA = ["Ali", "Ahmed"]
+// var sectionB = ["Faiz", "Umer"]
+// var merge = sectionA.concat(sectionB)
+// console.log(merge)
+
+// es6 method
+// var sectionA = ["Ali", "Ahmed"]
+// var sectionB = [...sectionA, "Faiz", "Umer"]
+// console.log(sectionB)
+
+// with object
+// var student1 = { name: "Ghulam Qadir" }
+// var student = { ...student1, class: "Xi" }
+// console.log(student)
+
+
+
+
+// Object Destructuring (easy way to get properties from object)
+// var profile = { name: "Ghulam Qadir", email: "ghulamqadirsakaria25@gmail.com", skills: ["Front End Developer", "Flutter Developer"] }
+
+// let { name, email, skills } = profile
+// console.log(skills)
+
+
+
