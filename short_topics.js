@@ -62,3 +62,8 @@ if (true) {
 
 
 
+
+// Ternary operators (if else and else if short method)
+var age = 37
+var checkAge = age < 18 ? "Your age is less" : age >= 18 && age <= 50 ? "You can take this ride" : "Age restrictions"
+console.log(checkAge)   
