@@ -1,0 +1,12 @@
+#spinner {
+    display: none;
+    margin: auto;
+    width: 20%;
+    margin-top: 30px;
+}
+
+#promise_result {
+    margin: auto;
+    width: 20%;
+    margin-top: 30px;
+}
