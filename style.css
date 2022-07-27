@@ -1,3 +1,7 @@
+body {
+    margin: 10px;
+}
+
 #spinner {
     display: none;
     margin: auto;
@@ -7,6 +11,6 @@
 
 #promise_result {
     margin: auto;
-    width: 20%;
+    width: 40%;
     margin-top: 30px;
 }
