@@ -161,7 +161,7 @@ var usersDataDiv = document.getElementById('json_users_data')
 
 
 
-// implementing Promise.all()
+// implementing Promise.all() (if any one promise rejects, then it throws an error. it wants to be resolve all the promises)
 let firstPromise = new Promise(function (resolve, reject) {
     getSpinner.style.display = "block"
 
@@ -183,14 +183,16 @@ let firstPromise = new Promise(function (resolve, reject) {
 let secondPromise = new Promise((resolve, reject) => {
     getSpinner.style.display = "block"
 
-    var hasData = "Has data"
+    var hasData = "jhik"
     setTimeout(() => {
         let secondPromiseResolve = "Second promise resolved!"
 
         if (hasData === "Has data") {
             resolve(secondPromiseResolve)
         }
-        reject("Something went wrong")
+        else {
+            reject("Something went wrong")
+        }
     }, 2000)
 })
 
@@ -207,24 +209,38 @@ let thirdPromise = new Promise((resolve, reject) => {
 })
 
 
-Promise.all([firstPromise, secondPromise, thirdPromise]).then((result) => {
+// Promise.all([firstPromise, secondPromise, thirdPromise]).then((result) => {
+//     getSpinner.style.display = "none"
+//     var usersApiData = result[0]
+//     for (var i in usersApiData) {
+
+//         let userNameDiv = document.getElementById('promise_all')
+
+//         var userName = document.createElement('p')
+//         var userNameText = document.createTextNode(usersApiData[i].username)
+//         userName.appendChild(userNameText)
+//         userNameDiv.appendChild(userName)
+
+//     }
+//     for (var j in result) {
+//         console.log(result[j])
+//     }
+
+//     console.log("All promises resolved!")
+
+// })
+//     .catch((error) => {
+//         getSpinner.style.display = "none"
+//         console.log(`Error=>> ${error}`)
+//     })
+
+
+
+
+
+// PROMISE.allSettled (always return the response no matter if any promise rejects)
+Promise.allSettled([firstPromise, secondPromise, thirdPromise]).then((response) => {
     getSpinner.style.display = "none"
-    var usersApiData = result[0]
-    for (var i in usersApiData) {
-
-        let userNameDiv = document.getElementById('promise_all')
-
-        var userName = document.createElement('p')
-        var userNameText = document.createTextNode(usersApiData[i].username)
-        userName.appendChild(userNameText)
-        userNameDiv.appendChild(userName)
-
-    }
-    for (var j in result) {
-        console.log(result[j])
-    }
-
+    console.log(response)
+    console.log("All promises settled")
 })
-    .catch((error) => {
-        console.log(`Error=>> ${error}`)
-    })
