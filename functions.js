@@ -19,3 +19,20 @@ shortFunction = (a, b) => (console.log(a + b))
 shortFunction(5, 2)
 
 
+
+
+
+// CallBack Function
+
+
+renderData = (name) => {
+    console.log(name)
+}
+
+getData = (renderData) => {
+    setTimeout(() => {
+        renderData("Ghulam Qadir")
+    }, 3000)
+}
+getData(renderData)
+
