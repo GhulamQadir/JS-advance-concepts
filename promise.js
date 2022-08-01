@@ -162,51 +162,51 @@ var usersDataDiv = document.getElementById('json_users_data')
 
 
 // implementing Promise.all() (if any one promise rejects, then it throws an error. it wants to be resolve all the promises)
-let firstPromise = new Promise(function (resolve, reject) {
-    getSpinner.style.display = "block"
+// let firstPromise = new Promise(function (resolve, reject) {
+//     getSpinner.style.display = "block"
 
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
+//     fetch('https://jsonplaceholder.typicode.com/users')
+//         .then(response => response.json())
 
-        .then(function (result) {
-            resolve(result)
-            console.log("First promise resolved")
-        })
+//         .then(function (result) {
+//             resolve(result)
+//             console.log("First promise resolved")
+//         })
 
-        .catch(function (error) {
-            reject(error)
-        })
-})
-
-
-
-let secondPromise = new Promise((resolve, reject) => {
-    getSpinner.style.display = "block"
-
-    var hasData = "jhik"
-    setTimeout(() => {
-        let secondPromiseResolve = "Second promise resolved!"
-
-        if (hasData === "Has data") {
-            resolve(secondPromiseResolve)
-        }
-        else {
-            reject("Something went wrong")
-        }
-    }, 2000)
-})
+//         .catch(function (error) {
+//             reject(error)
+//         })
+// })
 
 
-let thirdPromise = new Promise((resolve, reject) => {
-    getSpinner.style.display = "block"
 
-    setTimeout(() => {
-        let thirdPromiseResolve = "Third promise resolved!"
+// let secondPromise = new Promise((resolve, reject) => {
+//     getSpinner.style.display = "block"
 
-        resolve(thirdPromiseResolve)
-        reject("Something went wrong")
-    }, 1000)
-})
+//     var hasData = "jhik"
+//     setTimeout(() => {
+//         let secondPromiseResolve = "Second promise resolved!"
+
+//         if (hasData === "Has data") {
+//             resolve(secondPromiseResolve)
+//         }
+//         else {
+//             reject("Something went wrong")
+//         }
+//     }, 2000)
+// })
+
+
+// let thirdPromise = new Promise((resolve, reject) => {
+//     getSpinner.style.display = "block"
+
+//     setTimeout(() => {
+//         let thirdPromiseResolve = "Third promise resolved!"
+
+//         resolve(thirdPromiseResolve)
+//         reject("Something went wrong")
+//     }, 1000)
+// })
 
 
 // Promise.all([firstPromise, secondPromise, thirdPromise]).then((result) => {
@@ -239,8 +239,21 @@ let thirdPromise = new Promise((resolve, reject) => {
 
 
 // PROMISE.allSettled (always return the response no matter if any promise rejects)
-Promise.allSettled([firstPromise, secondPromise, thirdPromise]).then((response) => {
-    getSpinner.style.display = "none"
-    console.log(response)
-    console.log("All promises settled")
-})
+// Promise.allSettled([firstPromise, secondPromise, thirdPromise]).then((response) => {
+//     getSpinner.style.display = "none"
+//     console.log(response)
+//     console.log("All promises settled")
+// })
+
+
+
+// var val;
+// setTimeOut problem with for loop
+for (var i = 1; i <= 2; ++i) {
+    setTimeoutProblem = (i) => {
+        setTimeout(() => {
+            console.log(i)
+        }, 1000)
+    }
+    setTimeoutProblem(i)
+}
