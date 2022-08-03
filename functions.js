@@ -38,20 +38,62 @@
 
 ///////////////////////////// ARRAY FUNCTIONS //////////////////////////////////
 // 1: Filter
-let arr = [{ name: "Ghulam Qadir", age: 17 }, { name: "Noman", age: 14 }]
+// let arr = [{ name: "Ghulam Qadir", age: 17 }, { name: "Noman", age: 14 }]
 
-let filter = arr.filter(a => {
-    return a.name.includes('man')
+// let filter = arr.filter(a => {
+//     return a.name.includes('man')
+// })
+
+// console.log(filter)
+
+
+
+
+// 2: Search
+// let userName = "ghulam qadir"
+// let search = "g"
+// if (userName.startsWith(search)) {
+//     console.log(userName)
+// }
+
+
+
+
+// // 3: Map
+// let arrayMap = [2, 3, 4, 5, 6]
+// let multiply = arrayMap.map(value => {
+//     return value * 2
+// })
+
+// console.log(multiply)
+
+
+// // map example
+// let namesArray = ["Ali", "Usman", "Ghulam Qadir", "Noman", "Faizan"]
+// let namesMap = namesArray.map(names => {
+//     let mapDiv = document.getElementById('map_example')
+
+//     let namesPara = document.createElement('p')
+//     let namesParaText = document.createTextNode(names)
+//     namesPara.appendChild(namesParaText)
+
+//     mapDiv.appendChild(namesPara)
+// })
+
+
+
+
+
+// 4: forEach
+let stack = ["HTML", "CSS", "Bootstrap", "JavaScript", "React Js"]
+stack.forEach((value, index) => {
+    let forEachPractise = document.getElementById('forEach_example')
+    forEachPractise.innerHTML += `<p>${index + 1}: ${value}</h3>`
 })
 
-console.log(filter)
 
-
-
-
-// Search
-let userName = "ghulam qadir"
-let search = "g"
-if (userName.startsWith(search)) {
-    console.log(userName)
-}
+// forEach example
+let arrayForEach = [2, 3, 4, 5, 6]
+arrayForEach.forEach(value => {
+    console.log(value + 10)
+})
