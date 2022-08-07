@@ -102,19 +102,56 @@
 
 
 // 5: reduce method(give only value)
-var numArray = [2, 4, 3, 8, 1]
-let multiple = numArray.reduce((total, currentVal) => {
-    return total *= currentVal
-})
-console.log("Multiple of array values is: ", multiple)
+// var numArray = [2, 4, 3, 8, 1]
+// let multiple = numArray.reduce((total, currentVal) => {
+//     return total *= currentVal
+// })
+// console.log("Multiple of array values is: ", multiple)
 
 
 
 
 // 6: some method(checks the values of an array. if matches any value then retur true otherwise false)
-const ages = [12, 18, 17]
-const checkAge = ages.some(ages => {
-    return ages >= 18
-})
+// const ages = [12, 18, 17]
+// const checkAge = ages.some(ages => {
+//     return ages >= 18
+// })
 
-console.log(checkAge)
+// console.log(checkAge)
+
+
+
+
+
+// Function Default Parameter Values
+userProfile = (name, email, phoneNo = "Not necessary") => {
+    let profile = {
+        name: name,
+        email: email,
+        phoneNo: phoneNo
+
+    }
+    console.log(profile)
+}
+
+userProfile("Ghulam Qadir", "ghulamqadirsakaria25@gmail.com")
+
+
+
+
+
+
+// Function Rest Parameter (The rest parameter (...) allows a function to treat an indefinite number of arguments as an array)
+
+addition = (...arguments) => {
+
+    let sum = arguments.reduce((total, currentVal) => {
+        total += currentVal
+        return total;
+    })
+
+    console.log(`Sum  of arguments is: ${sum}`)
+
+}
+
+addition(2, 104, 100, 43)
